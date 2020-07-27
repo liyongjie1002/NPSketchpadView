@@ -30,7 +30,7 @@
 
 - (IBAction)didClickAction {
     self.sketchpadView.lineStrokeColor = [UIColor magentaColor];
-    [self.sketchpadView showWithID:123];
+    [self.sketchpadView showWithID:@"123"];
 }
 
 @end

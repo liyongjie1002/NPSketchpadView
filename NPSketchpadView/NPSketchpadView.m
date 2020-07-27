@@ -25,7 +25,7 @@ static const CGFloat animationDuration = 0.25;
 @property (weak, nonatomic) IBOutlet UIButton *forwardButton;
 @property (weak, nonatomic) IBOutlet UIButton *clearButton;
 /** 缓存id */
-@property (nonatomic, assign) NSInteger ID;
+@property (nonatomic, copy) NSString    *sketchID;
 /** 导航视图的高度 */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 /** 存储原来的StatusBarStyle */
@@ -108,12 +108,12 @@ static const CGFloat animationDuration = 0.25;
     [self showWithID:0];
 }
 
-- (void)showWithID:(NSInteger)ID {
-    if (ID != 0) {
-        _ID = ID;
+- (void)showWithID:(NSString *)sketchID {
+    if (sketchID != nil) {
+        _sketchID = sketchID;
         NSMutableDictionary *dataDic = [NSKeyedUnarchiver unarchiveObjectWithFile:NPSketchpadPath];
         if (dataDic) {
-            NSMutableDictionary *contentDic = dataDic[[NSString stringWithFormat:@"%zd", _ID]];
+            NSMutableDictionary *contentDic = dataDic[[NSString stringWithFormat:@"%@", _sketchID]];
             if (contentDic) {
                 NSMutableArray *allPaths = contentDic[allPathsArray];
                 NSMutableArray *undoPaths = contentDic[undoPathsArray];
@@ -153,7 +153,7 @@ static const CGFloat animationDuration = 0.25;
 }
 
 - (void)disappear {
-    if (_ID != 0) {
+    if (_sketchID != nil) {
         NSMutableDictionary *contentDic = [NSMutableDictionary dictionary];
         contentDic[allPathsArray] = self.scrollView.allPathsArray;
         contentDic[undoPathsArray] = self.scrollView.undoPathsArray;
@@ -161,7 +161,7 @@ static const CGFloat animationDuration = 0.25;
         if (!dataDic) {
             dataDic = [NSMutableDictionary dictionary];
         }
-        dataDic[[NSString stringWithFormat:@"%zd", _ID]] = contentDic;
+        dataDic[[NSString stringWithFormat:@"%@", _sketchID]] = contentDic;
         [NSKeyedArchiver archiveRootObject:dataDic toFile:NPSketchpadPath];
     }
     

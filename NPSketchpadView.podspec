@@ -1,7 +1,7 @@
  
 Pod::Spec.new do |s|
   s.name             = 'NPSketchpadView'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = '草稿纸'
  
   s.description      = <<-DESC
@@ -13,10 +13,9 @@ Pod::Spec.new do |s|
   s.author           = { '李永杰' => 'iyongjie@yeah.net' }
   s.source           = { :git => 'https://github.com/iyongjie/NPSketchpadView.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
+  s.framework  = "UIKit"
+  s.requires_arc = true
 
   s.source_files = 'NPSketchpadView/*'
-
   s.resources = ["NPSketchpadView/NPSketchpadView.bundle", "NPSketchpadView/NPSketchpadView.xib"]
-  s.framework  = "UIKit"
-
 end

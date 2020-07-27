@@ -20,7 +20,7 @@
 /** 显示无缓存路径的画板 */
 - (void)show;
 /** 加载这个id的缓存, id不能是0 */
-- (void)showWithID:(NSInteger)ID;
+- (void)showWithID:(NSString *)sketchID;
 
 
 - (void)setLineWidth:(CGFloat)lineWidth lineStrokeColor:(UIColor *)lineStrokeColor autoChangeStatusBarStyle:(BOOL)autoChangeStatusBarStyle;
