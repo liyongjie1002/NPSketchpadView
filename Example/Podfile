@@ -1,0 +1,6 @@
+use_frameworks!
+target 'NPSketchpadView_Tests' do
+  pod 'NPSketchpadView', :path => '../'
+  
+  
+end
