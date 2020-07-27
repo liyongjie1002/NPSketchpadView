@@ -18,6 +18,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'NPSketchpadView'
+如果pod install安装失败就使用 pod install --repo-update`
 ```
 
 ## Author
