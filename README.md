@@ -4,13 +4,10 @@
 [![Version](https://img.shields.io/cocoapods/v/NPSketchpadView.svg?style=flat)](https://cocoapods.org/pods/NPSketchpadView)
 [![License](https://img.shields.io/cocoapods/l/NPSketchpadView.svg?style=flat)](https://cocoapods.org/pods/NPSketchpadView)
 [![Platform](https://img.shields.io/cocoapods/p/NPSketchpadView.svg?style=flat)](https://cocoapods.org/pods/NPSketchpadView)
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
+## todo
+待做成组件
 ## Requirements
-
+iOS 8.0及以上
 ## Installation
 
 NPSketchpadView is available through [CocoaPods](https://cocoapods.org). To install
@@ -18,12 +15,14 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'NPSketchpadView'
-如果pod install安装失败就使用 pod install --repo-update`
+如果pod install安装失败就使用  
+pod update 更新所有库
+pod install --repo-update` 安装更新
 ```
 
 ## Author
 
-iyongjie, iyongjie@yeah.net
+李永杰, iyongjie@yeah.net
 
 ## License
 
