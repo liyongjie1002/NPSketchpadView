@@ -1,11 +1,11 @@
  
 Pod::Spec.new do |s|
   s.name             = 'NPSketchpadView'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = '草稿纸'
  
   s.description      = <<-DESC
-    草稿纸demo
+    草稿纸功能封装
                        DESC
 
   s.homepage         = 'https://github.com/iyongjie/NPSketchpadView'
