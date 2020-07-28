@@ -12,6 +12,7 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *clickButton;
+@property (weak, nonatomic) IBOutlet UIButton *click1Button;
 @property (nonatomic, strong) NPSketchpadView *sketchpadView;
 
 @end
@@ -32,5 +33,8 @@
     self.sketchpadView.lineStrokeColor = [UIColor magentaColor];
     [self.sketchpadView showWithID:@"123"];
 }
-
+- (IBAction)didClickAction1 {
+    self.sketchpadView.lineStrokeColor = [UIColor yellowColor];
+    [self.sketchpadView showWithID:@"456"];
+}
 @end

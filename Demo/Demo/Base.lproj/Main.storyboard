@@ -24,11 +24,20 @@
                                     <action selector="didClickAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="sBf-aH-aZV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-qz-kwJ">
+                                <rect key="frame" x="142" y="470" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="点击"/>
+                                <connections>
+                                    <action selector="didClickAction1" destination="BYZ-38-t0r" eventType="touchUpInside" id="aXm-Wq-hYm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="click1Button" destination="2Wq-qz-kwJ" id="5KZ-HK-dfw"/>
                         <outlet property="clickButton" destination="yrl-TU-CA9" id="RM5-u2-cy7"/>
                     </connections>
                 </viewController>

@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.framework  = "UIKit"
   s.requires_arc = true
 
-  s.source_files = 'NPSketchpadView/*'
+  s.source_files = 'NPSketchpadView/*.{h,m}'
   s.resources = ["NPSketchpadView/NPSketchpadView.bundle", "NPSketchpadView/NPSketchpadView.xib"]
 end
