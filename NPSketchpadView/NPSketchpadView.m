@@ -45,7 +45,8 @@ static const CGFloat animationDuration = 0.25;
 }
 
 + (instancetype)sketchpadView {
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    return [[bundle loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
 }
 
 - (void)setLineWidth:(CGFloat)lineWidth lineStrokeColor:(UIColor *)lineStrokeColor autoChangeStatusBarStyle:(BOOL)autoChangeStatusBarStyle {
