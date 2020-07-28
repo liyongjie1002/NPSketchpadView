@@ -1,7 +1,7 @@
  
 Pod::Spec.new do |s|
   s.name             = 'NPSketchpadView'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = '草稿纸'
  
   s.description      = <<-DESC
