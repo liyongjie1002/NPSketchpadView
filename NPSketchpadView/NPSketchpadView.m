@@ -9,7 +9,6 @@
 #import "NPSketchpadScrollView.h"
 
 #define NPSketchpadPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"NPSketchpadView.data"]
-#define NPSketchpadImagePath(imgName) [@"NPSketchpadView.bundle" stringByAppendingPathComponent:imgName]
 
 static NSString *const allPathsArray = @"allPathsArray";
 static NSString *const undoPathsArray = @"undoPathsArray";
@@ -71,10 +70,17 @@ static const CGFloat animationDuration = 0.25;
 }
 
 - (void)setupUI {
-    [self.closeButton setImage:[UIImage imageNamed:NPSketchpadImagePath(@"sketchpad_close")] forState:UIControlStateNormal];
-    [self.undoButton setImage:[UIImage imageNamed:NPSketchpadImagePath(@"sketchpad_back")] forState:UIControlStateNormal];
-    [self.clearButton setImage:[UIImage imageNamed:NPSketchpadImagePath(@"sketchpad_clear")] forState:UIControlStateNormal];
-    [self.forwardButton setImage:[UIImage imageNamed:NPSketchpadImagePath(@"sketchpad_forward")] forState:UIControlStateNormal];
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSURL *url = [bundle URLForResource:@"NPSketchpadView" withExtension:@"bundle"];
+    NSBundle *imageBundle = [NSBundle bundleWithURL:url];
+    UIImage *colseImage = [UIImage imageNamed:@"sketchpad_close" inBundle:imageBundle compatibleWithTraitCollection:nil];
+    UIImage *backImage = [UIImage imageNamed:@"sketchpad_back" inBundle:imageBundle compatibleWithTraitCollection:nil];
+    UIImage *clearImage = [UIImage imageNamed:@"sketchpad_clear" inBundle:imageBundle compatibleWithTraitCollection:nil];
+    UIImage *undoImage = [UIImage imageNamed:@"sketchpad_forward" inBundle:imageBundle compatibleWithTraitCollection:nil];
+    [self.closeButton setImage:colseImage forState:UIControlStateNormal];
+    [self.undoButton setImage:backImage forState:UIControlStateNormal];
+    [self.clearButton setImage:clearImage forState:UIControlStateNormal];
+    [self.forwardButton setImage:undoImage forState:UIControlStateNormal];
 
     self.topViewHeight.constant = [UIApplication sharedApplication].statusBarFrame.size.height + 44;
     [self addSubview:self.scrollView];

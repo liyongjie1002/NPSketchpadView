@@ -16,6 +16,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'NPSketchpadView'
 如果pod install安装失败就使用  
+source 'https://cdn.cocoapods.org/'
 pod update 更新所有库
 pod install --repo-update` 安装更新
 ```
